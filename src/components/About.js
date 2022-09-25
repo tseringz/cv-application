@@ -2,21 +2,10 @@ import React, { Component } from 'react';
 
 
 class About extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            name: 'Tsering Dhondup',
-            description: 'This is fucking cool as fuck and we do care about it.',
-        }
-
-    };
-
-
+   
     render() {
-        
-        const { name, description } = this.props;
 
+        const { name, description } = this.props;
         return (
             <div> 
                 <h1>{name}</h1>

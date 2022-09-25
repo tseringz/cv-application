@@ -8,9 +8,8 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-
     this.state = {
-      counter: 0,
+
     };
   }
 
@@ -18,7 +17,7 @@ class App extends Component {
   render() {
     return (
       <div className="Resume">
-        <About />
+        <About name="Tsering Dhondup" description="this is fucking awesome and we are doing good" />
         <Qualification />
         <ProjectAndSkills />
       </div>
