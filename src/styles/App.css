@@ -68,7 +68,7 @@ h5 {
 }
 
 .About {
-
+  position: relative;
 }
 
 .lightType {
@@ -110,4 +110,86 @@ main {
 }
 
 
+#editForm {
+  max-width: 200px;
+  position: absolute;
+  right: 0;
+  top: 40px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background-color: #ededed;
+  border: 1px solid #1d9552;
+
+}
+label {
+  color: #141414;
+}
+
+input {
+  appearance: none;
+  background: none;
+  font-family: 'PPAgrandir', Georgia, 'Times New Roman', Times, serif;
+  border: 1px solid #1d9552;
+  padding: 4px;
+  margin-bottom: 12px;
+  margin-top: 4px;
+  color: #141414;
+}
+
+input:focus {
+  border: 1px solid #1d9552;
+  outline: none;
+}
+
+input::placeholder {
+  font-family: 'PPAgrandir', Georgia, 'Times New Roman', Times, serif;
+}
+
+textarea {
+  appearance: none;
+  background: none;
+  font-family: 'PPAgrandir', Georgia, 'Times New Roman', Times, serif;
+  border: 1px solid #1d9552;
+  padding: 3px;
+ 
+}
+
+textarea:focus {
+  outline: none;
+}
+textarea::placeholder {
+  font-family: 'PPAgrandir', Georgia, 'Times New Roman', Times, serif;
+
+}
+
+.button-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+}
+
+button {
+  font-family: 'PPAgrandir', Georgia, 'Times New Roman', Times, serif;
+  padding: 6px 8px 6px 8px;
+  background: none;
+  border: 1px solid #1d9552;
+  margin-top: 8px;
+  margin-right: 20px;
+  color:  #141414;
+}
+
+.Edit {
+  position: absolute;
+  right: 0;
+  margin-right: 0;
+  color: #1d9552;
+}
+.Qualification {
+  padding-right: 10px;
+}
+.projectWrapper, .educationWrapper, .workWrapper, .contactWrapper {
+  position: relative;
+}
 
