@@ -4,21 +4,21 @@ class ProjectAndSkills extends Component {
 
     render() {
 
-        const { year, title, description, email, website, mobile } = this.props;
+        const { contactHeading, projectHeading, contact, project } = this.props;
 
         return (
             <div>
-             <h2>Projects</h2>
+             <h2>{projectHeading}</h2>
              <div>
-                <h2>{year}</h2>
-                <h2>{title}</h2>
-                <h2>{description}</h2>
+                <h5 className="lightType">{project[0].year}</h5>
+                <h5>{project[0].projectName}</h5>
+                <h5 className="lightType">{project[0].description}</h5>
              </div>
              <div>
-                <h2>Contact</h2>
-                <h2>{email}</h2>
-                <h2>{website}</h2>
-                <h2>{mobile}</h2>
+                <h2>{contactHeading}</h2>
+                <h5 className="lightType">{contact.email}</h5>
+                <h5 className="lightType">{contact.website}</h5>
+                <h5 className="lightType">{contact.mobile}</h5>
              </div>
             </div>
         );

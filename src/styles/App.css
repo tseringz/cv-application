@@ -1,0 +1,113 @@
+@font-face {
+  font-family: 'Abril Fatface';
+
+  src: url('../fonts/AbrilFatface-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'PPAgrandir';
+
+  src: url('../fonts/PPAgrandir-GrandLight.otf') format('opentype');
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: 'PPAgrandir';
+
+  src: url('../fonts/PPAgrandir-WideLight.otf') format('opentype');
+  font-weight: 300;
+}
+
+*,*::before, *::after {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+body {
+  color: #1d9552;
+  font-family: "PPAgrandir", Helvetica, Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  font-size: 1vw;
+}
+
+h1 {
+  font-size: 62px;
+  font-family: 'Abril Fatface', Georgia, 'Times New Roman', Times, serif;
+  letter-spacing: 3px;
+  line-height: 1.6;
+  margin: 0;
+  border-bottom: 2px solid #1d9552;
+  padding: 10px;
+}
+
+h2 {
+  font-size: 42px;
+  font-family: 'Abril Fatface', Georgia, 'Times New Roman', Times, serif;
+  letter-spacing: 3px;
+  margin: 0;
+}
+
+h5 {
+  font-size: 18px;
+  font-family: 'PPAgrandir', Georgia, 'Times New Roman', Times, serif;
+  margin: 0;
+}
+
+.Resume {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 780px;
+  padding: 40px;
+  background-color: #ededed;
+}
+
+.About {
+
+}
+
+.lightType {
+  font-family: 'PPAgrandir', Georgia, 'Times New Roman', Times, serif;
+  font-weight: 300;
+}
+
+.About-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 150px;
+  align-items: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin: 0;
+  border-bottom: 2px solid #1d9552;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 24px;
+
+}
+
+.Education-wrapper {
+  width: 50%;
+  border-right: solid 2px #1d9552;
+}
+
+.Project-wrapper {
+  display: flex;
+  padding-left: 20px;
+  width: 50%;
+  
+}
+
+
+
