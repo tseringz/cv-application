@@ -103,25 +103,36 @@ main {
 }
 
 .Project-wrapper {
-  display: flex;
   padding-left: 20px;
   width: 50%;
   
 }
 
 
-#editForm {
+.editForm {
   max-width: 200px;
   position: absolute;
   right: 0;
-  top: 40px;
+  display: none;
+  flex-direction: column;
+  padding: 10px;
+  background-color: #ededed;
+  border: 1px solid #1d9552;
+  z-index: 99;
+
+}
+.editForm2 {
+  max-width: 200px;
+  position: absolute;
+  right: 0;
   display: flex;
   flex-direction: column;
   padding: 10px;
   background-color: #ededed;
   border: 1px solid #1d9552;
-
+  z-index: 99;
 }
+
 label {
   color: #141414;
 }
@@ -181,14 +192,26 @@ button {
 }
 
 .Edit {
+  display: none;
   position: absolute;
   right: 0;
-  margin-right: 0;
+  margin-right: 5;
   color: #1d9552;
+  cursor: pointer;
 }
-.Qualification {
+
+.Hover-area {
+ width: 100%;
+ height: 100%;
+ position: absolute;
+ z-index: 1;
+}
+
+.Qualification, .Work, .Project, .Contact {
+  position: relative;
   padding-right: 10px;
 }
+
 .projectWrapper, .educationWrapper, .workWrapper, .contactWrapper {
   position: relative;
 }
