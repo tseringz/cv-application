@@ -6,6 +6,15 @@ import Work from './components/Work';
 import Contact from './components/Contact';
 import './styles/App.css';
 
+
+const initialStyle = {
+  style: 'editForm',
+  style2: 'editForm',
+  style3: 'editForm',
+  style4: 'editForm',
+  style5: 'editForm',
+  }
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -76,64 +85,59 @@ class App extends Component {
         phone: '+123-456-1234',
 
       },
-
-      style: 'editForm',
-      style2: 'editForm',
-      style3: 'editForm',
-      style4: 'editForm',
-      style5: 'editForm',
+        style: 'editForm',
+        style2: 'editForm',
+        style3: 'editForm',
+        style4: 'editForm',
+        style5: 'editForm',
 
     };
     
     this.onEdit = this.onEdit.bind(this);
-    this.onEdit2 = this.onEdit2.bind(this);
-    this.onEdit3 = this.onEdit3.bind(this);
-    this.onEdit4 = this.onEdit4.bind(this);
-    this.onEdit5 = this.onEdit5.bind(this);
+    this.onClose = this.onClose.bind(this);
+    this.handleChangeAbout = this.handleChangeAbout.bind(this);
   }
 
-  onEdit() {
-    this.setState({
-      style: 'editForm2',
-    })
-  }
-
-  onEdit2() {
-    this.setState({
-      style2: 'editForm2',
-    })
-  }
   
-  onEdit3() {
+  onEdit(e) {
+    const { name, value } = e.target;
     this.setState({
-      style3: 'editForm2',
+      [name]: value,
     })
   }
 
-  onEdit4() {
+  onClose(e) {
+    const name = e.target.name;
     this.setState({
-      style4: 'editForm2',
+      [name]: 'editForm'
     })
   }
-  onEdit5() {
+
+  handleChangeAbout(event) {
     this.setState({
-      style5: 'editForm2',
+      about: {
+        name: event.target.value,
+        aboutMe: event.target.value,
+      }
     })
   }
+
   render() {
-    const { about, education, work, project, contact, style, style2, style3, style4, style5} = this.state;
+    const { about, education, work, project, contact, initialStyle, style, style2, style3, style4, style5 } = this.state;
+
+
     
     return (
       <div className="Resume">
-        <About onEdit={this.onEdit} style={style} aboutHeading="About" about={about}  />
+        <About onEdit={this.onEdit} onClose={this.onClose} style={style} aboutHeading="About" about={about}  handleChangeAbout={this.handleChangeAbout}/>
         <main>
           <div className="Education-wrapper">
-          <Qualification  onEdit2={this.onEdit2} style2={style2} education={education} educationHeading="Education"/>
-          <Work  onEdit3={this.onEdit3} style3={style3} work={work} workHeading="Work"/>
+          <Qualification  onEdit={this.onEdit} onClose={this.onClose} style2={style2} education={education} educationHeading="Education"/>
+          <Work  onEdit={this.onEdit} onClose={this.onClose} style3={style3} work={work} workHeading="Work"/>
           </div>
           <div className="Project-wrapper">
-          <Project onEdit4={this.onEdit4} style4={style4} project={project} projectHeading="Project"/>
-          <Contact onEdit5={this.onEdit5} contact={contact} style5={style5} contactHeading="Contact"/>
+          <Project onEdit={this.onEdit} onClose={this.onClose} style4={style4} project={project} projectHeading="Project"/>
+          <Contact onEdit={this.onEdit} onClose={this.onClose} style5={style5} contact={contact} initialStyle={initialStyle} contactHeading="Contact"/>
           </div>
         </main>
       </div>

@@ -6,13 +6,18 @@ class Contact extends Component {
     constructor(props) {
         super(props);
 
-        this.onEdit = this.onEdit5.bind(this);
+        this.onEdit = this.onEdit.bind(this);
+        this.onClose = this.onClose.bind(this);
 
     }
 
-    onEdit5() {
-        this.props.onEdit5();
+    onEdit(e) {
+        this.props.onEdit(e);
     }
+
+    onClose(e) {
+        this.props.onClose(e);
+       }
 
     render() {
 
@@ -26,7 +31,7 @@ class Contact extends Component {
             }} onMouseLeave={(e) => {
                 e.target.childNodes[0].style.display = "none";
             }}>
-                <button type="button" className="Edit" onClick={this.onEdit5.bind(this)}>Edit</button>
+                <button type="button" name="style5" value="editForm2" className="Edit" onClick={this.onEdit.bind(this)}>Edit</button>
             </div>
              <div className="contactWrapper">
                 <button className="Edit">Edit</button>
@@ -36,7 +41,7 @@ class Contact extends Component {
              <input type="text" className="projectName" placeholder = "Project name" ></input>
              <textarea type="text" className="aboutProject" row="4" col="50" placeholder='About your project ...'></textarea>
              <div className="button-wrapper">
-             <button type="button">Close</button>
+             <button name="style5" type="button" onClick={this.onClose.bind(this)}>Close</button>
              <button type="submit">Submit</button>
              </div>
            </form>

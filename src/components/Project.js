@@ -4,12 +4,17 @@ class ProjectAndSkills extends Component {
 constructor(props) {
   super(props);
 
-  this.onEdit4 = this.onEdit4.bind(this);
+  this.onEdit = this.onEdit.bind(this);
+  this.onClose = this.onClose.bind(this);
 }
 
-  onEdit4() {
-   this.props.onEdit4();
+  onEdit(e) {
+   this.props.onEdit(e);
   }
+
+  onClose(e) {
+    this.props.onClose(e);
+   }
 
     render() {
 
@@ -23,7 +28,7 @@ constructor(props) {
             }} onMouseLeave={(e) => {
                 e.target.childNodes[0].style.display = "none";
             }}>
-                <button type="button" className="Edit" onClick={this.onEdit4.bind(this)}>Edit</button>
+                <button type="button" name="style4" value="editForm2" className="Edit" onClick={this.onEdit.bind(this)}>Edit</button>
             </div>
              <div className="projectWrapper">
               <form className={style4}>
@@ -32,7 +37,7 @@ constructor(props) {
              <input type="text" className="projectName" placeholder = "Project name" ></input>
              <textarea type="text" className="aboutProject" row="4" col="50" placeholder='About your project ...'></textarea>
              <div className="button-wrapper">
-             <button type="button">Close</button>
+             <button name="style4" type="button" onClick={this.onClose.bind(this)}>Close</button>
              <button type="submit">Submit</button>
              </div>
               </form>

@@ -7,16 +7,24 @@ class About extends Component {
         super(props);
 
         this.onEdit = this.onEdit.bind(this);
+        this.onClose = this.onClose.bind(this);
+        this.handleChangeAbout = this.handleChangeAbout.bind(this);
     }
 
-    onEdit() {
-        this.props.onEdit();
+    onEdit(e) {
+        this.props.onEdit(e);
     }
+
+    onClose(e) {
+        this.props.onClose(e);
+    }
+
+    handleChangeAbout(event) {
+        this.props.handleChangeAbout(event);
+      }
    
     render() {
         const { about, aboutHeading, style } = this.props;
-
-       
 
         
         return (
@@ -26,14 +34,14 @@ class About extends Component {
             }} onMouseLeave={(e) => {
                 e.target.childNodes[0].style.display = "none";
             }}>
-                <button type="button" className="Edit" onClick={this.onEdit.bind(this)}>Edit</button>
+                <button type="button" className="Edit" name="style" value="editForm2" onClick={this.onEdit.bind(this)}>Edit</button>
             </div>
             <form className={style}>
              <label>Name:</label>
-             <input type="text" className="name" placeholder = "Name" ></input>
-             <textarea type="text" className="aboutMe" row="4" col="50" placeholder='About Yours ...'></textarea>
+             <input type="text" className="name" placeholder = "Name" onChange={this.handleChangeAbout.bind(this)} ></input>
+             <textarea type="text" className="aboutMe" row="4" col="50" placeholder='About Yours ...' onChange={this.handleChangeAbout.bind(this)}></textarea>
              <div className="button-wrapper">
-             <button type="button">Close</button>
+             <button name="style" type="button" onClick={this.onClose.bind(this)}>Close</button>
              <button type="submit">Submit</button>
              </div>
             </form>

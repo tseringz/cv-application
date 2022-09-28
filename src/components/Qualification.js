@@ -6,12 +6,17 @@ class Qualification extends Component {
     constructor(props) {
         super(props);
 
-        this.onEdit2 = this.onEdit2.bind(this);
+        this.onEdit = this.onEdit.bind(this);
+        this.onClose = this.onClose.bind(this);
 
     }
 
-    onEdit2() {
-        this.props.onEdit2();
+    onEdit(e) {
+        this.props.onEdit(e);
+    }
+
+    onClose(e) {
+        this.props.onClose(e);
     }
 
     render() {
@@ -28,7 +33,7 @@ class Qualification extends Component {
             }} onMouseLeave={(e) => {
                 e.target.childNodes[0].style.display = "none";
             }}>
-                <button type="button" className="Edit" onClick={this.onEdit2.bind(this)}>Edit</button>
+                <button type="button"  className="Edit" name="style2" value="editForm2" onClick={this.onEdit.bind(this)}>Edit</button>
             </div>
                 <div className="educationWrapper">
                 <form className={style2}>
@@ -37,7 +42,7 @@ class Qualification extends Component {
                 <input type="text" className="projectName" placeholder = "Project name" ></input>
                 <input></input>
                 <div className="button-wrapper">
-                <button type="button">Close</button>
+                <button name="style2" type="button" onClick={this.onClose.bind(this)}>Close</button>
                 <button type="submit">Submit</button>
              </div>
                 </form>
