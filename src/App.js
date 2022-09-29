@@ -6,98 +6,26 @@ import Work from './components/Work';
 import Contact from './components/Contact';
 import './styles/App.css';
 
-
-const initialStyle = {
-  style: 'editForm',
-  style2: 'editForm',
-  style3: 'editForm',
-  style4: 'editForm',
-  style5: 'editForm',
-  }
-
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      about: {
-        name: 'Elanor Fitzgerald',
-        aboutMe: `Lorem ipsum dolor sit amet, consectetur 
-                  adipiscing elit, sed do eiusmod tempor incididunt
-                  ut labore et dolore magna aliqua.`,
-
-      },
-
-      education: [
-        {
-          year: '2022 - present',
-          degree: 'Bachelors of Design',
-          school: 'Drogpa Studio',
-        }, 
-        {
-          year: '2022 - present',
-          degree: 'High School',
-          school: 'Drogpa Studio',
-        }, 
-
-      ],
-
-      work: [
-        {
-          year: '2022 - present',
-          occupation: 'Graphic Designer',
-          company: 'Drogpa Studio',
-        }, 
-        {
-          year: '2022 - present',
-          occupation: 'Graphic Designer',
-          company: 'Drogpa Studio',
-        }, 
-        {
-          year: '2022 - present',
-          occupation: 'Graphic Designer',
-          company: 'Drogpa Studio',
-        }, 
-
-      ],
-
-      project: [
-        {
-          year: '2022 - present',
-          projectName: 'Graphic Designer',
-          description: `Lorem ipsum dolor sit amet, 
-                        consectetur adipiscing elit, sed do eiusmod 
-                        tempor incididunt ut labore et dolore magna aliqua.`,
-        }, 
-
-        {
-          year: '2022 - present',
-          project: 'Graphic Designer',
-          description: `Lorem ipsum dolor sit amet, 
-                        consectetur adipiscing elit, sed do eiusmod 
-                        tempor incididunt ut labore et dolore magna aliqua.`,
-        }, 
-      ],
-
-      contact: {
-        email: 'hello@odinproject.com',
-        website: 'www.odinproject.com',
-        phone: '+123-456-1234',
-
-      },
-
+      theme: 'default',
       initialStyle: {
         style: 'editForm',
         style2: 'editForm',
         style3: 'editForm',
         style4: 'editForm',
         style5: 'editForm',
-      }
+      },
+
 
     };
     
     this.onEdit = this.onEdit.bind(this);
     this.onClose = this.onClose.bind(this);
+    this.changeTheme = this.changeTheme.bind(this);
   }
 
   
@@ -121,22 +49,47 @@ class App extends Component {
     })
   }
 
-  
+  changeTheme(e) {
+    const newTheme = e.target.value;
+    this.setState({
+      theme: newTheme,
+    })
+  }
 
   render() {
-    const { about, education, work, project, contact, initialStyle } = this.state;
+    const {  initialStyle, theme } = this.state;
+    const btnStyleDefault = {
+      backgroundColor: '#1d9552',
+      width: '16px',
+      height: '16px',
+      border: 'none',
+      marginLeft: '0',
+    }
+
+    const btnStyleBlue = {
+      backgroundColor: '#3AB0FF',
+      width: '16px',
+      height: '16px',
+      border: 'none',
+      marginLeft: '-10px',
+    }
 
     return (
-      <div className="Resume">
-        <About onEdit={this.onEdit} onClose={this.onClose} initialStyle={initialStyle} aboutHeading="About" about={about} />
+      <div className="Resume" data-theme={theme}>
+        <div className="btn-wrapper">
+          <p style={{marginTop: '4px', marginRight: '8px'}}>Theme:</p>
+        <button value="default" className="default" style={btnStyleDefault}onClick={this.changeTheme}></button>
+        <button value="blue" className="blue" style={btnStyleBlue} onClick={this.changeTheme}></button>
+        </div>
+        <About onEdit={this.onEdit} onClose={this.onClose} initialStyle={initialStyle} aboutHeading="About" />
         <main>
           <div className="Education-wrapper">
-          <Qualification  onEdit={this.onEdit} onClose={this.onClose} initialStyle={initialStyle} education={education} educationHeading="Education"/>
-          <Work  onEdit={this.onEdit} onClose={this.onClose} initialStyle={initialStyle} work={work} workHeading="Work"/>
+          <Qualification  onEdit={this.onEdit} onClose={this.onClose} initialStyle={initialStyle}  educationHeading="Education"/>
+          <Work  onEdit={this.onEdit} onClose={this.onClose} initialStyle={initialStyle} workHeading="Work"/>
           </div>
           <div className="Project-wrapper">
-          <Project onEdit={this.onEdit} onClose={this.onClose} initialStyle={initialStyle} project={project} projectHeading="Project"/>
-          <Contact onEdit={this.onEdit} onClose={this.onClose} initialStyle={initialStyle} contact={contact} contactHeading="Contact"/>
+          <Project onEdit={this.onEdit} onClose={this.onClose} initialStyle={initialStyle}  projectHeading="Project"/>
+          <Contact onEdit={this.onEdit} onClose={this.onClose} initialStyle={initialStyle}  contactHeading="Contact"/>
           </div>
         </main>
       </div>
