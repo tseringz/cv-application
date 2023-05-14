@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/cv-application/static/css/main.de506cbf.css",
+    "main.js": "/cv-application/static/js/main.21afd566.js",
+    "static/media/AbrilFatface-Regular.ttf": "/cv-application/static/media/AbrilFatface-Regular.c2459f7f69cb5eb788d8.ttf",
+    "static/media/PPAgrandir-WideLight.otf": "/cv-application/static/media/PPAgrandir-WideLight.8e1d77299f17653ac742.otf",
+    "static/media/PPAgrandir-GrandLight.otf": "/cv-application/static/media/PPAgrandir-GrandLight.25159051609437407498.otf",
+    "index.html": "/cv-application/index.html",
+    "main.de506cbf.css.map": "/cv-application/static/css/main.de506cbf.css.map",
+    "main.21afd566.js.map": "/cv-application/static/js/main.21afd566.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.de506cbf.css",
+    "static/js/main.21afd566.js"
+  ]
+}
